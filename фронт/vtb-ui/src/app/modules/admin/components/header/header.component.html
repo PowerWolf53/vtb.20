@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1>ВТБ</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button [routerLink]="'/accounts'"> Меню </a>
+      <a mat-button [routerLink]="'/create-account'"> Крдеиты </a>
+      <a mat-button [routerLink]="'/contacts'"> Депозиты </a>
+      <a mat-button [routerLink]="'/contacts'"> Пользователи </a>
+    </div>
+    <div class="exit-wrapper">
+      <div (click)="handleExit()" class="exit">
+
+      </div>
+
+
+    </div>
+  </mat-toolbar-row>
+
+</mat-toolbar>
+

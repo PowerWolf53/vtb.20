@@ -1,0 +1,73 @@
+.auth-wrapper{
+  height: 700px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.auth-bar{
+  background-color: white;
+  height: 100%;
+  width: 500px;
+  border-radius: 15px;
+  background-image: url("https://marketplace.canva.com/EADaibJPpy4/1/0/1600w/canva-indigo-gradient-background-lZmS36_QB6U.jpg");
+  box-shadow: 14px 0px 18px -8px rgba(0,0,0,0.75);
+  z-index: 2;
+}
+
+.form-container{
+  z-index: 1;
+  background-color: white;
+  height: 90%;
+  width: 500px;
+  border-radius: 0px 15px 15px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-container{
+  margin-top: 50px;
+  padding-right: 30px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-wrapper{
+  height: 150px;
+  width: 200px;
+  background-image: url("https://logos-download.com/wp-content/uploads/2018/02/VTB_Bank_logo_blue.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+}
+
+.text-wrapper{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  z-index: 1000;
+}
+
+.deviz{
+  font-size: 14pt;
+  font-family: 'Roboto', sans-serif;
+}
+
+.tab-container{
+  padding-left: 10px;
+}
+
+
+
+
+

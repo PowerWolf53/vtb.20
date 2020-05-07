@@ -1,0 +1,35 @@
+.sign_in_wrapper{
+  width: 80%;
+
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  margin-top: 100px;
+
+}
+.login-container{
+  width: 350px;
+}
+.password-container{
+  margin-top: 20px;
+  width: 350px;
+}
+.example-full-width {
+  width: 100%;
+}
+
+.button-container{
+  margin-top: 150px;
+  width: 100px;
+  height: 100px;
+  margin-left: 70px;
+}
+
+.mat-raised-button {
+  width: 200px;
+  height: 50px;
+  font-size: 16pt;
+}
+.check-box-wrapper{
+  margin-top: 30px;
+}

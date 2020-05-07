@@ -1,0 +1,14 @@
+.exit{
+  height: 30px;
+  width: 30px;
+  background-image: url("../../../../../assets/images/exit.png");
+  background-size: contain;
+  margin-right: 25px;
+  cursor: pointer;
+}
+
+.exit-wrapper{
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+}

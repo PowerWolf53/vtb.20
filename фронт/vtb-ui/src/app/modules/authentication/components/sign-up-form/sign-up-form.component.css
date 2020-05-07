@@ -1,0 +1,20 @@
+.sign_up_wrapper{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.complete-button-wrapper{
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

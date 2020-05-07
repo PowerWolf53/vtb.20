@@ -1,0 +1,12 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+body{
+  background-image: url("https://www.creativeclique.co.za/wp-content/uploads/2019/01/Material-Design-Background-Undesigns-00.jpg");
+  background-size: cover;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+

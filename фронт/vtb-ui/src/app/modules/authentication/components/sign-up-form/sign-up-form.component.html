@@ -1,0 +1,108 @@
+
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+
+  <mat-step [stepControl]="firstFormGroup" completed="false">
+    <form class="form-container" [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Укажите ФИО</ng-template>
+
+      <mat-form-field>
+        <mat-label>Имя</mat-label>
+        <input matInput placeholder="Имя" [formControl]="nameFormControl" [errorStateMatcher]="matcher" required>
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+          Пожалуйста укажите имя
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Фамилия</mat-label>
+        <input matInput placeholder="Фамилия" [formControl]="surnameFormControl" [errorStateMatcher]="matcher"  required>
+        <mat-error *ngIf="surnameFormControl.hasError('required')">
+          Пожалуйста укажите фамилию
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Отчество</mat-label>
+        <input matInput placeholder="Отчество" [formControl]="patrionityFormControl" [errorStateMatcher]="matcher"  required>
+        <mat-error *ngIf="patrionityFormControl.hasError('required')">
+          Пожалуйста укажите отчество
+        </mat-error>
+      </mat-form-field>
+
+      <div>
+        <button (click)="$event.preventDefault()"  mat-button matStepperNext>Далее</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup">
+    <form class="form-container" [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Укажите серийный номер паспорта и номер карты</ng-template>
+      <mat-form-field>
+        <mat-label>Паспорт</mat-label>
+        <input matInput  placeholder="BM2045432" [formControl]="serialNumberControl" [errorStateMatcher]="matcher"
+               required>
+        <mat-error *ngIf="serialNumberControl.hasError('required')">
+          Пожалуйста укажите серийный номер
+        </mat-error>
+        <mat-error *ngIf="!serialNumberControl.hasError('required') && serialNumberControl.hasError('pattern') ">
+          Пожалуйста укажите валидный серийный номер
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Номер карты</mat-label>
+        <input matInput  placeholder="1234-1234-1234-1234"  [formControl]="cardNumberFormControl" [errorStateMatcher]="matcher"
+               required>
+        <mat-error *ngIf="cardNumberFormControl.hasError('required')">
+          Пожалуйста укажите номер карты
+        </mat-error>
+        <mat-error *ngIf="!cardNumberFormControl.hasError('required') && cardNumberFormControl.hasError('pattern') ">
+          Пожалуйста укажите валидный номер карты
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <button (click)="$event.preventDefault()" mat-button matStepperPrevious>Назад</button>
+        <button (click)="$event.preventDefault()" mat-button matStepperNext>Далее</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="thirdFormGroup">
+    <form class="form-container" [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Придумайте логин и пароль</ng-template>
+      <mat-form-field>
+        <mat-label>Логин</mat-label>
+        <input matInput  placeholder="user@some_mail.ru" [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+               required>
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Пожалуйста введите валидный логин
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Введите <strong>логин</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Пароль</mat-label>
+        <input type="password" matInput [formControl]="passwordFormControl" [errorStateMatcher]="matcher"
+               required>
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+          Введите <strong>пароль</strong>
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <button (click)="$event.preventDefault()" mat-button matStepperPrevious>Назад</button>
+        <button (click)="$event.preventDefault()" mat-button matStepperNext>Далее</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Подтверждение</ng-template>
+    <div class="complete-button-wrapper">
+      <button *ngIf="allFieldsValid()" mat-button matStepperPrevious (click)="signUp()">{{formLabel}}</button>
+      <button *ngIf="!allFieldsValid()" mat-button disabled matStepperPrevious>{{formLabel}}</button>
+      <button mat-button (click)="stepper.reset()">Сбросить</button>
+    </div>
+  </mat-step>
+</mat-vertical-stepper>
+
